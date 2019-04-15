@@ -5,10 +5,6 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
-import com.google.android.gms.common.GooglePlayServicesRepairableException;
-import com.google.android.gms.security.ProviderInstaller;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -142,11 +138,6 @@ public class WebService extends AsyncTask<String, String, String> {
     private String httpsSendRequest() {
         result = "";
         //HttpsTrustManager.allowAllSSL();
-        try {
-            ProviderInstaller.installIfNeeded(context);
-        } catch (GooglePlayServicesRepairableException | GooglePlayServicesNotAvailableException e) {
-            e.printStackTrace();
-        }
         try {
             SSLContext sslContext = SSLContext.getInstance("TLSv1.2");
             sslContext.init(null, null, null);
