@@ -1,4 +1,4 @@
-package ir.itroid.weblib;
+package ir.itroid.easyhttpweb;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
